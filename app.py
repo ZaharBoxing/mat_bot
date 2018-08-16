@@ -3,8 +3,6 @@ import logging
 import sys
 import fileinput
 
-
-
 # Enable logging
 logging.basicConfig(
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -95,4 +93,5 @@ dp.add_error_handler(error)
 if __name__ == '__main__':
     updater.start_polling()
     updater.idle()
+
 
