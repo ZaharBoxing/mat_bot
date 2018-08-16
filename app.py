@@ -2,6 +2,10 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Conve
 import logging
 import sys
 import fileinput
+from flask import Flask, request
+
+app = Flask(__name__)
+PORT = 8443
 
 # Enable logging
 logging.basicConfig(
@@ -93,3 +97,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    app.run(host='0.0.0.0',port=PORT)
