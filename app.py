@@ -69,30 +69,30 @@ def error(bot, update, error):
     logger.warn('Update "%s" caused error "%s"' % (update, error))
 
 
-def main():
-    updater = Updater("470924108:AAG8wP-6sVIjJQ6juHiOtcfFDodpdHjEA08")
-    dp = updater.dispatcher
 
-    conv_handler = ConversationHandler(
-        entry_points=[CommandHandler('add', add)],
+updater = Updater("470924108:AAG8wP-6sVIjJQ6juHiOtcfFDodpdHjEA08")
+dp = updater.dispatcher
 
-        states={
+conv_handler = ConversationHandler(
+    entry_points=[CommandHandler('add', add)],
 
-            ADD: [MessageHandler(Filters.text, add_in_file)]
-        },
-        fallbacks=[CommandHandler('cancel', cancel)]
-    )
+    states={
+
+        ADD: [MessageHandler(Filters.text, add_in_file)]
+    },
+    fallbacks=[CommandHandler('cancel', cancel)]
+)
 
 
-    dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(CommandHandler("kol", kol))
-    dp.add_handler(CommandHandler("link", link))
-    dp.add_handler(conv_handler)
+dp.add_handler(CommandHandler("start", start))
+dp.add_handler(CommandHandler("kol", kol))
+dp.add_handler(CommandHandler("link", link))
+dp.add_handler(conv_handler)
 
-    dp.add_error_handler(error)
-    updater.start_polling()
-    updater.idle()
+dp.add_error_handler(error)
+
 
 if __name__ == '__main__':
-    main()
+    updater.start_polling()
+    updater.idle()
 
