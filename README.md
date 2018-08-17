@@ -1,5 +1,5 @@
-clone with: git clone https://github.com/ZaharBoxing/mat_bot.git
-virtualenv env
-source env/bin/activate
-pip install -r requirements.txt
-python3 app.py
+<p>clone with: git clone https://github.com/ZaharBoxing/mat_bot.git
+<p>virtualenv env
+<p>source env/bin/activate
+<p>pip install -r requirements.txt
+<p>python3 app.py
