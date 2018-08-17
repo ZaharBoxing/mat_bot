@@ -68,7 +68,7 @@ def error(bot, update, error):
 
 
 
-updater = Updater("602408183:AAEjaHPqzWiyupQe53rk4AhSk9aeqBQbpLc")
+updater = Updater("")
 dp = updater.dispatcher
 
 conv_handler = ConversationHandler(
